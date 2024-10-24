@@ -33,7 +33,9 @@ export default function InicioPage() {
       ? opciones2.split(",") || opciones2.split(", ")
       : [];
     const opciones3 = formData.get("opciones3") as any;
-    const opcionesEncuesta3 = opciones3 ? opciones3.split(", ") : [];
+    const opcionesEncuesta3 = opciones3
+      ? opciones3.split(", ") || opciones3.split(", ")
+      : [];
     const opciones4 = formData.get("opciones4") as any;
     const opcionesEncuesta4 = opciones4 ? opciones4.split(", ") : [];
     const opciones5 = formData.get("opciones5") as any;

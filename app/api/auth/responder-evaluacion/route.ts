@@ -19,38 +19,28 @@ export async function POST(request: NextRequest, respuesta: NextResponse) {
       puntaje: pregunta1.puntaje,
       correcta: pregunta1.correcta,
     };
-    // Find the encuesta by id and userId
-    const encuesta = await Encuesta.findOne({
-      _id: idEncuesta,
+    const newEncuesta = new Encuesta({
+      //
     });
 
-    if (!encuesta) {
-      return new NextResponse(`No se encontró la encuesta: ${idEncuesta}`, {
-        status: 404,
-      });
-    }
-
-    // Update the encuesta fields
-    const updatedEncuesta = await Encuesta.findOneAndUpdate(
-      { _id: idEncuesta }, // Query to find the document
-      {
-        fechaContestada: fechaContestada,
-        encuestaContestada: encuestaContestada,
-        pregunta1: preguntaEncuesta1,
-      },
-      { new: true },
-    );
+    // Guardar Encuesta
+    const savedEncuesta = await newEncuesta.save({
+      idEncuesta,
+      fechaContestada: fechaContestada,
+      encuestaContestada: encuestaContestada,
+      pregunta1: preguntaEncuesta1,
+    });
 
     // Return the updated document as response
     return NextResponse.json({
-      id: updatedEncuesta._id,
-      userId: updatedEncuesta.userId,
-      fechaInicio: updatedEncuesta.fechaInicio,
-      fechaTermino: updatedEncuesta.fechaTermino,
-      fechaCreacion: updatedEncuesta.fechaCreacion,
-      fechaContestada: updatedEncuesta.fechaContestada,
-      encuestaContestada: updatedEncuesta.encuestaContestada,
-      pregunta1: updatedEncuesta.pregunta1,
+      id: newEncuesta._id,
+      userId: newEncuesta.userId,
+      fechaInicio: newEncuesta.fechaInicio,
+      fechaTermino: newEncuesta.fechaTermino,
+      fechaCreacion: newEncuesta.fechaCreacion,
+      fechaContestada: newEncuesta.fechaContestada,
+      encuestaContestada: newEncuesta.encuestaContestada,
+      pregunta1: newEncuesta.pregunta1,
     });
   } catch (error) {
     console.error("Error updating encuesta:", error);

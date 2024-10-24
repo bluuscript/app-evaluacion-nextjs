@@ -290,12 +290,12 @@ export default function InicioPage() {
             icon={<FaHome size={20} />}
             text="Inicio"
             location="/inicio"
-            active
           />
           <SidebarItem
             icon={<RiSurveyLine size={20} />}
             text="Nueva Evaluación"
             location="/inicio/nueva-evaluacion"
+            active
           />
           <SidebarItem
             icon={<RiSurveyFill size={20} />}

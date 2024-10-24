@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { ThemeModeScript } from "flowbite-react";
 import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Encuestas",
-  description: "Encuestas",
+  title: "Evaluaciones | GlobalSmart",
+  description: "Gestor de Evaluaciones | GlobalSmart",
 };
 
 export default function RootLayout({
@@ -17,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <head>
-        <ThemeModeScript />
+        <link rel="icon" href="/fav.ico" />
       </head>
       <body className={inter.className}>{children}</body>
     </html>

@@ -58,7 +58,7 @@ export default function LandingPage() {
           className="mb-6 flex items-center text-2xl font-semibold text-gray-900 dark:text-white"
         >
           <h1 className="text-center text-3xl font-semibold">
-            Encuestas
+            Evaluaciones
             <span className="flex flex-col items-center">
               <FcSurvey className="text-blue-400" size={100} />
             </span>
@@ -93,36 +93,11 @@ export default function LandingPage() {
                   max={6}
                 />
               </div>
-              <div className="flex items-center justify-between">
-                <div className="flex items-start">
-                  <div className="flex h-5 items-center">
-                    <Checkbox id="remember" color="yellow" />
-                  </div>
-                  <div className="ml-3 text-sm">
-                    <Label htmlFor="remember" value="Recuerdame" />
-                  </div>
-                </div>
-                <a
-                  href="/user/forgot"
-                  className="text-sm font-medium text-blue-400 hover:text-blue-500 hover:underline dark:text-blue-400 dark:hover:text-blue-500"
-                >
-                  Olvidaste tu contraseña?
-                </a>
-              </div>
               <div className="flex flex-col">
                 <Button type="submit" color="blue" outline>
                   Iniciar Sesión
                 </Button>
               </div>
-              <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                Todavía no tienes cuenta?
-                <a
-                  href="/user/signup"
-                  className="ms-2 font-medium text-blue-400 hover:text-blue-500 hover:underline dark:text-blue-500"
-                >
-                  Registrarme
-                </a>
-              </p>
             </form>
           </div>
         </div>

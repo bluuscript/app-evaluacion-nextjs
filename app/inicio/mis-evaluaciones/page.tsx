@@ -48,7 +48,6 @@ export default function EvaluacionPage() {
             icon={<FaHome size={20} />}
             text="Inicio"
             location="/inicio"
-            active
           />
           <SidebarItem
             icon={<RiSurveyLine size={20} />}
@@ -59,6 +58,7 @@ export default function EvaluacionPage() {
             icon={<RiSurveyFill size={20} />}
             text="Mis Evaluaciones"
             location="/inicio/mis-evaluaciones"
+            active
           />
           <SidebarItem
             icon={<VscSignOut />}
